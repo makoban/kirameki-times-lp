@@ -1,0 +1,13 @@
+# 大容量ファイル・不要ファイルを除外
+*.MP4
+*.mp3
+*.xlsx
+*.pdf
+*.py
+*.json
+アクリル装置/
+キャラ/
+金型用データ/
+タイトル.jpg
+タイトル2.jpg
+Gemini_Generated_Image_*
