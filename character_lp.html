@@ -500,36 +500,7 @@
             <h3 class="board-subtitle">LINEボットで推しキャラと繋がる！</h3>
             <p class="board-subtext">いっぱい会話してね❤</p>
 
-            <!-- ちびキャラ装飾：上段3体（左:かのん 中:みこと 右:マリン）下段3体（左:あおい 中:さくら 右:きらら） -->
-            <div class="chibi-wrapper deco-kanon">
-                <img src="./パッケージ/kanon_chibi.png" alt="かのん" class="chibi-deco">
-                <div class="speech-bubble" style="top: -30px; left: 10px;">待ってるよ♡</div>
-            </div>
-
-            <div class="chibi-wrapper deco-mikoto">
-                <img src="./パッケージ/mikoto_chibi.png" alt="みこと" class="chibi-deco">
-                <div class="speech-bubble" style="top: -30px; left: 5px;">お話しましょ♡</div>
-            </div>
-
-            <div class="chibi-wrapper deco-marin">
-                <img src="./パッケージ/marin_chibi.png" alt="マリン" class="chibi-deco">
-                <div class="speech-bubble" style="top: -30px; left: 10px;">いっぱい話そ！</div>
-            </div>
-
-            <div class="chibi-wrapper deco-aoi">
-                <img src="./パッケージ/aoi_chibi.png" alt="あおい" class="chibi-deco">
-                <div class="speech-bubble" style="bottom: 90px; left: 10px;">あそぼー！！</div>
-            </div>
-
-            <div class="chibi-wrapper deco-sakura">
-                <img src="./パッケージ/sakura_chibi.png" alt="さくら" class="chibi-deco">
-                <div class="speech-bubble" style="bottom: 85px; left: 5px;">よろしくね♪</div>
-            </div>
-
-            <div class="chibi-wrapper deco-kirara">
-                <img src="./パッケージ/kirara_chibi.png" alt="きらら" class="chibi-deco">
-                <div class="speech-bubble" style="bottom: 95px; left: 10px;">登録してねっ！</div>
-            </div>
+            <!-- ちびキャラ装飾：一旦削除 -->
             
         </div>
     </section>
@@ -685,12 +656,12 @@
     <script>
         // 衣装データの定義と、画像内の余白違いを相殺するための倍率(scale)設定
         const costumeData = {
-            marin: { idol: './パッケージ/乙姫　マリン.png', casual: './パッケージ/marin_casual.png', current: 'idol', scale: 1.45 },
-            kanon: { idol: './パッケージ/大須　かのん（神音）.png', casual: './パッケージ/kanon_casual.png', current: 'idol', scale: 1.4 },
-            kirara: { idol: './パッケージ/金鯱　きらら.png', casual: './パッケージ/kirara_casual.png', current: 'idol', scale: 1.4 },
-            aoi: { idol: './パッケージ/徳川　あおい（葵）.png', casual: './パッケージ/aoi_casual.png', current: 'idol', scale: 1.35 },
-            sakura: { idol: './パッケージ/東山　さくら（桜）.png', casual: './パッケージ/sakura_casual.png', current: 'idol', scale: 1.65 },
-            mikoto: { idol: './パッケージ/神宮寺　みこと（美琴）.png', casual: './パッケージ/mikoto_casual.png', current: 'idol', scale: 1.45 }
+            marin: { idol: './パッケージ/乙姫　マリン.png', casual: './パッケージ/marin_casual.png', current: 'idol', scale: 1.0 },
+            kanon: { idol: './パッケージ/大須　かのん（神音）.png', casual: './パッケージ/kanon_casual.png', current: 'idol', scale: 1.0 },
+            kirara: { idol: './パッケージ/金鯱　きらら.png', casual: './パッケージ/kirara_casual.png', current: 'idol', scale: 1.0 },
+            aoi: { idol: './パッケージ/徳川　あおい（葵）.png', casual: './パッケージ/aoi_casual.png', current: 'idol', scale: 1.0 },
+            sakura: { idol: './パッケージ/東山　さくら（桜）.png', casual: './パッケージ/sakura_casual.png', current: 'idol', scale: 1.0 },
+            mikoto: { idol: './パッケージ/神宮寺　みこと（美琴）.png', casual: './パッケージ/mikoto_casual.png', current: 'idol', scale: 1.0 }
         };
 
         // 衣装フリップ処理 (クリックでアイドル⇔私服トグル。高さ維持とスケール補正)
