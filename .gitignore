@@ -1,10 +1,9 @@
-# 大容量ファイル・不要ファイルを除外
-*.MP4
-*.mp3
+# 不要ファイルを除外
+*.py
 *.xlsx
 *.pdf
-*.py
-*.json
+tmp_char.json
+characters_extracted.json
 アクリル装置/
 キャラ/
 金型用データ/
