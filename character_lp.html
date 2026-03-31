@@ -279,8 +279,15 @@
         /* 画像コンテナとアスペクト比の修正 (サイズジャンプ防止) */
         .card-img-wrapper {
             width: 100%; height: 460px; margin-top: -160px; margin-bottom: 0.5rem;
-            position: relative; filter: drop-shadow(0 20px 25px rgba(0,0,0,0.4)); z-index: 10; cursor: pointer;
+            position: relative; z-index: 10; cursor: pointer;
         }
+        /* キャラカラー別の影 */
+        .card-marin .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(0, 100, 255, 0.5)); }
+        .card-kanon .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(180, 0, 255, 0.5)); }
+        .card-kirara .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(255, 200, 0, 0.5)); }
+        .card-aoi .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(255, 30, 30, 0.5)); }
+        .card-sakura .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(255, 80, 180, 0.5)); }
+        .card-mikoto .card-img-wrapper { filter: drop-shadow(0 15px 25px rgba(0, 180, 80, 0.5)); }
         .card-img {
             position: absolute; bottom: 0; left: 50%; 
             transform: translateX(-50%) scale(1);
@@ -501,7 +508,7 @@
         <h2 class="section-title center">CHARACTER PROFILE</h2>
         <div class="grid">
             
-            <div class="card">
+            <div class="card card-marin">
                 <div class="card-img-wrapper" onclick="toggleCostume('marin')">
                     <img src="./パッケージ/乙姫　マリン.png" alt="乙姫マリン" class="card-img" id="img-marin" />
                 </div>
@@ -525,7 +532,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-kanon">
                 <div class="card-img-wrapper" onclick="toggleCostume('kanon')">
                     <img src="./パッケージ/大須　かのん（神音）.png" alt="大須かのん" class="card-img" id="img-kanon" />
                 </div>
@@ -549,7 +556,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-kirara">
                 <div class="card-img-wrapper" onclick="toggleCostume('kirara')">
                     <img src="./パッケージ/金鯱　きらら.png" alt="金鯱きらら" class="card-img" id="img-kirara" />
                 </div>
@@ -573,7 +580,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-aoi">
                 <div class="card-img-wrapper" onclick="toggleCostume('aoi')">
                     <img src="./パッケージ/徳川　あおい（葵）.png" alt="徳川あおい" class="card-img" id="img-aoi" />
                 </div>
@@ -597,7 +604,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-sakura">
                 <div class="card-img-wrapper" onclick="toggleCostume('sakura')">
                     <img src="./パッケージ/東山　さくら（桜）.png" alt="東山さくら" class="card-img" id="img-sakura" />
                 </div>
@@ -621,7 +628,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-mikoto">
                 <div class="card-img-wrapper" onclick="toggleCostume('mikoto')">
                     <img src="./パッケージ/神宮寺　みこと（美琴）.png" alt="神宮寺みこと" class="card-img" id="img-mikoto" />
                 </div>
