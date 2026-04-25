@@ -73,8 +73,16 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./stage_background.png'); background-size: cover; background-position: center; filter: brightness(0.6) contrast(1.2); z-index: -2; animation: slowZoom 20s infinite alternate linear;
         }
         .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, rgba(255,51,133,0.2) 0%, rgba(0,0,0,0.7) 100%); z-index: -1; }
-        .hero-logo { max-width: 600px; width: 90%; margin-bottom: 2rem; filter: drop-shadow(0 10px 25px rgba(255, 51, 133, 0.6)); animation: float 4s ease-in-out infinite, glow 3s infinite alternate; z-index: 2; }
-        .scroll-down { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); color: white; font-size: 2rem; animation: bounce 2s infinite; z-index: 2; cursor: pointer; }
+        .hero-logo { max-width: 560px; width: 86%; margin-bottom: 1.2rem; filter: drop-shadow(0 10px 25px rgba(255, 51, 133, 0.6)); animation: float 4s ease-in-out infinite, glow 3s infinite alternate; z-index: 2; }
+        .hero-kicker { z-index: 2; color: #ffe8f2; font-weight: 900; font-size: 1rem; text-shadow: 0 3px 12px rgba(0,0,0,0.8); margin-bottom: 0.5rem; }
+        .hero-title { z-index: 2; color: #fff; font-size: clamp(2rem, 5vw, 4.8rem); font-weight: 900; line-height: 1.12; text-shadow: 0 5px 20px rgba(0,0,0,0.85), 0 0 28px rgba(255,51,133,0.8); margin-bottom: 0.8rem; }
+        .hero-subtitle { z-index: 2; color: #fff8cc; font-weight: 800; font-size: clamp(1rem, 2.1vw, 1.45rem); line-height: 1.8; max-width: 880px; text-shadow: 0 3px 12px rgba(0,0,0,0.85); margin-bottom: 1.4rem; }
+        .hero-character-links { z-index: 2; display: grid; grid-template-columns: repeat(6, minmax(78px, 1fr)); gap: 0.75rem; width: min(920px, 96%); margin-bottom: 1rem; }
+        .hero-character-link { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; color: #fff; text-decoration: none; font-weight: 900; font-size: 0.8rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); border-radius: 16px; padding: 0.55rem 0.35rem; backdrop-filter: blur(8px); box-shadow: 0 10px 24px rgba(0,0,0,0.28); transition: transform 0.25s ease, background 0.25s ease; }
+        .hero-character-link:hover { transform: translateY(-4px); background: rgba(255,255,255,0.22); }
+        .hero-character-link img { width: 58px; height: 58px; object-fit: contain; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.45)); }
+        .hero-cta-note { z-index: 2; color: #fff; font-size: 0.95rem; font-weight: 800; text-shadow: 0 3px 12px rgba(0,0,0,0.8); }
+        .scroll-down { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); color: white; font-size: 2rem; animation: bounce 2s infinite; z-index: 2; cursor: pointer; }
 
         /* -------------------------------------
            NEWS セクション
@@ -350,6 +358,13 @@
 
         footer { background: #0d0010; color: var(--text-light); text-align: center; padding: 5rem 2rem 3rem; position: relative; overflow: hidden; border-top: 5px solid var(--primary-color); }
         .footer-logo { max-width: 250px; margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(255,51,133,0.6)); }
+        .footer-social-title { font-size: 1.1rem; font-weight: 900; color: #fff8cc; margin-bottom: 1rem; text-shadow: 0 0 12px rgba(255,51,133,0.55); }
+        .footer-social-links { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; margin: 0 auto 2rem; }
+        .footer-social-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-weight: 900; min-width: 145px; justify-content: center; padding: 0.8rem 1.2rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); box-shadow: 0 10px 24px rgba(0,0,0,0.28); transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease; }
+        .footer-social-link:hover { transform: translateY(-3px); background: rgba(255,255,255,0.16); box-shadow: 0 14px 28px rgba(0,0,0,0.35); }
+        .footer-social-link.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+        .footer-social-link.tiktok { background: linear-gradient(135deg, #111, #25f4ee 52%, #fe2c55); }
+        .footer-social-link.x-twitter { background: linear-gradient(135deg, #111, #333); }
 
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
         @keyframes glow { from { filter: drop-shadow(0 5px 25px rgba(255,51,133,0.5)); } to { filter: drop-shadow(0 15px 45px rgba(255,51,133,0.9)); } }
@@ -376,7 +391,15 @@
 
             /* ヒーロー */
             .hero { padding: 1rem 0.5rem; clip-path: polygon(0 0, 100% 0, 100% 98%, 0 100%); }
-            .hero-logo { width: 85%; }
+            .hero-logo { width: 92%; margin-bottom: 0.7rem; }
+            .hero-kicker { font-size: 0.8rem; }
+            .hero-title { font-size: 1.85rem; line-height: 1.2; margin-bottom: 0.5rem; }
+            .hero-subtitle { font-size: 0.86rem; line-height: 1.65; margin-bottom: 0.9rem; }
+            .hero-character-links { grid-template-columns: repeat(3, 1fr); gap: 0.45rem; width: 96%; margin-bottom: 0.7rem; }
+            .hero-character-link { border-radius: 12px; padding: 0.35rem 0.2rem; font-size: 0.68rem; }
+            .hero-character-link img { width: 42px; height: 42px; }
+            .hero-cta-note { font-size: 0.78rem; }
+            .scroll-down { bottom: 16px; font-size: 1.5rem; }
 
             /* セクション共通 */
             .about-section, .news-section, .media-section, .characters-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
@@ -438,6 +461,9 @@
             footer { padding: 2rem 0.8rem 1.5rem; }
             footer p { font-size: 0.75rem; }
             .footer-logo { max-width: 150px; }
+            .footer-social-title { font-size: 0.95rem; }
+            .footer-social-links { flex-direction: column; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+            .footer-social-link { width: min(280px, 92vw); padding: 0.7rem 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -451,6 +477,36 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <img src="./パッケージ/タイトル透明.png" alt="煌きTIMES 公式ロゴ - 名古屋発アイドル×LINEボット" class="hero-logo">
+        <div class="hero-kicker">名古屋発アイドルキャラクター企画</div>
+        <div class="hero-title">6人の推しと、LINEで話せる。</div>
+        <div class="hero-subtitle">気になる子を選んで、キャラクター別LINEボットの会話体験へ。</div>
+        <div class="hero-character-links" aria-label="キャラクター別LINEリンク">
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@561mucxu" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/marin_chibi.png" alt="乙姫マリン">
+                <span>マリン</span>
+            </a>
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@120ytjyl" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/kanon_chibi.png" alt="大須かのん">
+                <span>かのん</span>
+            </a>
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@545fnsmf" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/kirara_chibi.png" alt="金鯱きらら">
+                <span>きらら</span>
+            </a>
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@198jdufv" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/aoi_chibi.png" alt="徳川あおい">
+                <span>あおい</span>
+            </a>
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@967bjcvh" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/sakura_chibi.png" alt="東山さくら">
+                <span>さくら</span>
+            </a>
+            <a class="hero-character-link" href="https://line.me/R/ti/p/@369qpyqt" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'hero'})">
+                <img src="./パッケージ/ちびキャラ/mikoto_chibi.png" alt="神宮寺みこと">
+                <span>みこと</span>
+            </a>
+        </div>
+        <div class="hero-cta-note">友だち追加すると、推しからメッセージが届きます。</div>
         <div class="scroll-down" onclick="document.getElementById('news').scrollIntoView({behavior: 'smooth'})">
             <i class="fa-solid fa-chevron-down"></i>
         </div>
@@ -560,9 +616,9 @@
                 </ul>
                 <div class="profile-desc">冷静で落ち着いており、物事を一歩引いた視点で考えるタイプ。そばにいるだけで安心感を与え、要所では的確な言葉でチームを支える存在。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@561mucxu" target="_blank" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン'})">
+                    <a href="https://line.me/R/ti/p/@561mucxu" target="_blank" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/marin_chibi.png" alt="マリンちび">
-                        <span>マリンとLINEで話す♪</span>
+                        <span>マリンに近況を聞く</span>
                     </a>
                 </div>
             </div>
@@ -583,9 +639,9 @@
                 </ul>
                 <div class="profile-desc">清楚で綺麗系の外見だが、実はアニメやゲームに目がない典型的オタク。趣味に関しては情熱的で我を忘れる一面も。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@120ytjyl" target="_blank" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん'})">
+                    <a href="https://line.me/R/ti/p/@120ytjyl" target="_blank" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/kanon_chibi.png" alt="かのんちび">
-                        <span>かのんとLINEで話す♪</span>
+                        <span>かのんの推しを聞く</span>
                     </a>
                 </div>
             </div>
@@ -606,9 +662,9 @@
                 </ul>
                 <div class="profile-desc">明るく元気で人懐っこく、初対面でもすぐに距離を縮められる行動派。周囲を巻き込みながら雰囲気を明るくするムードメーカー。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@545fnsmf" target="_blank" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら'})">
+                    <a href="https://line.me/R/ti/p/@545fnsmf" target="_blank" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/kirara_chibi.png" alt="きららちび">
-                        <span>きららとLINEで話す♪</span>
+                        <span>きららから元気をもらう</span>
                     </a>
                 </div>
             </div>
@@ -629,9 +685,9 @@
                 </ul>
                 <div class="profile-desc">気品と上品さを兼ね備えたお嬢様タイプ。場の空気を読むのが上手で、チームから頼られる存在。意外にアクティブで行動的。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@198jdufv" target="_blank" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい'})">
+                    <a href="https://line.me/R/ti/p/@198jdufv" target="_blank" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/aoi_chibi.png" alt="あおいちび">
-                        <span>あおいとLINEで話す♪</span>
+                        <span>あおいに相談してみる</span>
                     </a>
                 </div>
             </div>
@@ -652,9 +708,9 @@
                 </ul>
                 <div class="profile-desc">明るく好奇心旺盛で元気いっぱいの末っ子タイプ。チーム最年少で甘えん坊な一面も。動物好きで心優しく、誰にでも親しみやすいムードメーカー。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@967bjcvh" target="_blank" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら'})">
+                    <a href="https://line.me/R/ti/p/@967bjcvh" target="_blank" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/sakura_chibi.png" alt="さくらちび">
-                        <span>さくらとLINEで話す♪</span>
+                        <span>さくらと今日の話をする</span>
                     </a>
                 </div>
             </div>
@@ -675,9 +731,9 @@
                 </ul>
                 <div class="profile-desc">クールビューティーで落ち着いた雰囲気。周囲を自然に安心させる"癒し＆まとめ役"で、チームの冷静担当。芯の強さも持ち合わせる。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@369qpyqt" target="_blank" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと'})">
+                    <a href="https://line.me/R/ti/p/@369qpyqt" target="_blank" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/mikoto_chibi.png" alt="みことちび">
-                        <span>みこととLINEで話す♪</span>
+                        <span>みことにご利益を聞く</span>
                     </a>
                 </div>
             </div>
@@ -687,6 +743,21 @@
 
     <footer>
         <img src="./パッケージ/タイトル透明.png" alt="煌 TIMES ロゴ" class="footer-logo">
+        <div class="footer-social-title">OFFICIAL SNS</div>
+        <div class="footer-social-links" aria-label="煌きTIMES 公式SNSリンク">
+            <a class="footer-social-link instagram" href="https://www.instagram.com/kirameki_times/" target="_blank" rel="noopener" onclick="gtag('event','sns_link_click',{platform:'instagram',placement:'footer'})">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a class="footer-social-link tiktok" href="https://www.tiktok.com/@kirameki_times" target="_blank" rel="noopener" onclick="gtag('event','sns_link_click',{platform:'tiktok',placement:'footer'})">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a class="footer-social-link x-twitter" href="https://x.com/kirameki_times" target="_blank" rel="noopener" onclick="gtag('event','sns_link_click',{platform:'x',placement:'footer'})">
+                <i class="fa-brands fa-x-twitter"></i>
+                <span>X</span>
+            </a>
+        </div>
         <p>&copy; 2026 煌 TIMES / サンライト All Rights Reserved.</p>
     </footer>
 
