@@ -18,14 +18,14 @@
     <meta property="og:title" content="煌きTIMES | 名古屋発アイドル×LINEボット">
     <meta property="og:description" content="6人のキャラクターとLINEで話せる、まったく新しい推し活の形。煌きTIMESの世界へようこそ。">
     <meta property="og:url" content="https://kirameki.sunlight-net.co.jp/">
-    <meta property="og:image" content="https://kirameki.sunlight-net.co.jp/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/%E7%85%8C%E3%81%8D%E3%83%90%E3%83%8A%E3%83%BC.png">
+    <meta property="og:image" content="https://kirameki.sunlight-net.co.jp/og-image.jpg">
     <meta property="og:locale" content="ja_JP">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="煌きTIMES | 名古屋発アイドル×LINEボット">
     <meta name="twitter:description" content="6人のキャラクターとLINEで話せる、まったく新しい推し活の形。">
-    <meta name="twitter:image" content="https://kirameki.sunlight-net.co.jp/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/%E7%85%8C%E3%81%8D%E3%83%90%E3%83%8A%E3%83%BC.png">
+    <meta name="twitter:image" content="https://kirameki.sunlight-net.co.jp/og-image.jpg">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHBPQQNQ2E"></script>
@@ -70,7 +70,7 @@
             position: relative; width: 100%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; text-align: center; padding: 2rem; z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
         }
         .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./stage_background.png'); background-size: cover; background-position: center; filter: brightness(0.6) contrast(1.2); z-index: -2; animation: slowZoom 20s infinite alternate linear;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./stage_background.webp'); background-size: cover; background-position: center; filter: brightness(0.6) contrast(1.2); z-index: -2; animation: slowZoom 20s infinite alternate linear;
         }
         .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, rgba(255,51,133,0.2) 0%, rgba(0,0,0,0.7) 100%); z-index: -1; }
         .hero-logo { max-width: 560px; width: 86%; margin-bottom: 1.2rem; filter: drop-shadow(0 10px 25px rgba(255, 51, 133, 0.6)); animation: float 4s ease-in-out infinite, glow 3s infinite alternate; z-index: 2; }
@@ -91,7 +91,7 @@
         .news-logo-wrapper {
             width: 100%; max-width: 1000px;
             /* ゴージャスなステージ背景を活用し、暗く沈めすぎない透過グラデーション */
-            background: linear-gradient(145deg, rgba(9, 0, 20, 0.5) 0%, rgba(28, 0, 41, 0.5) 100%), url('./stage_background.png') center/cover no-repeat;
+            background: linear-gradient(145deg, rgba(9, 0, 20, 0.5) 0%, rgba(28, 0, 41, 0.5) 100%), url('./stage_background.webp') center/cover no-repeat;
             border-radius: 20px; 
             /* 安っぽい太枠を廃止し、高級ガラスのような極細の光の反射エッジを適用 */
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -138,7 +138,7 @@
         .news-thumbnail img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; transition: transform 0.5s ease; }
         .news-item:hover .news-thumbnail img { transform: scale(1.05); }
         .news-text { font-size: 0.96rem; line-height: 1.8; color: #444; font-weight: 600; }
-        .pv-news-visual { position: relative; aspect-ratio: 16 / 10; background: url('./パッケージ/kirameki_paradox_pv_production_news.png') center / cover no-repeat; overflow: hidden; }
+        .pv-news-visual { position: relative; aspect-ratio: 16 / 10; background: url('./パッケージ/kirameki_paradox_pv_production_news.webp') center / cover no-repeat; overflow: hidden; }
         .pv-news-visual::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(7,0,30,0.02), rgba(7,0,30,0.72)); }
         .pv-news-badge { position: absolute; top: 18px; left: 18px; background: #fff; color: var(--primary-color); font-weight: 900; padding: 0.35rem 0.8rem; border-radius: 999px; box-shadow: 0 8px 18px rgba(0,0,0,0.25); }
         .pv-news-copy { position: absolute; left: 18px; right: 18px; bottom: 18px; color: #fff; text-shadow: 0 4px 16px rgba(0,0,0,0.7); }
@@ -189,7 +189,7 @@
            LINE案内（リッチバナー）
         ------------------------------------- */
         .line-board-bg {
-            background-image: url('./stage_background.png'); background-size: cover; background-position: center; border-radius: 20px;
+            background-image: url('./stage_background.webp'); background-size: cover; background-position: center; border-radius: 20px;
             padding: 4rem 2rem; text-align: center; color: #ffffff;
             /* 安っぽい太枠を廃止し、高級ガラスのような極細の光の反射エッジを適用 */
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -330,7 +330,7 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 4rem 3rem; }
 
         .card { background: var(--card-bg); border-radius: 25px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(255,255,255,0.5); transition: all 0.5s ease; position: relative; display: flex; flex-direction: column; align-items: center; overflow: visible; z-index: 1; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./sparkle_texture.png'); background-size: cover; background-position: center; border-radius: 25px; opacity: 0.15; z-index: -1; mix-blend-mode: color-dodge; pointer-events: none; transition: opacity 0.4s; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./sparkle_texture.webp'); background-size: cover; background-position: center; border-radius: 25px; opacity: 0.15; z-index: -1; mix-blend-mode: color-dodge; pointer-events: none; transition: opacity 0.4s; }
         .card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(255,51,133,0.4), inset 0 0 0 3px var(--secondary-color); }
         .card:hover::before { opacity: 0.6; }
 
@@ -500,33 +500,33 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
-        <img src="./パッケージ/タイトル透明.png" alt="煌きTIMES 公式ロゴ - 名古屋発アイドル×LINEボット" class="hero-logo">
+        <img src="./パッケージ/タイトル透明.webp" alt="煌きTIMES 公式ロゴ - 名古屋発アイドル×LINEボット" class="hero-logo">
         <div class="hero-kicker">名古屋発アイドルキャラクター企画</div>
         <div class="hero-title">6人の推しと、LINEで話せる。</div>
         <div class="hero-subtitle">気になる子を選んで、キャラクター別LINEボットの会話体験へ。</div>
         <div class="hero-character-links" aria-label="キャラクター別LINEリンク">
             <a class="hero-character-link" href="https://line.me/R/ti/p/@561mucxu" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/marin_chibi.png" alt="乙姫マリン">
+                <img src="./パッケージ/ちびキャラ/marin_chibi.webp" alt="乙姫マリン">
                 <span>マリン</span>
             </a>
             <a class="hero-character-link" href="https://line.me/R/ti/p/@120ytjyl" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/kanon_chibi.png" alt="大須かのん">
+                <img src="./パッケージ/ちびキャラ/kanon_chibi.webp" alt="大須かのん">
                 <span>かのん</span>
             </a>
             <a class="hero-character-link" href="https://line.me/R/ti/p/@545fnsmf" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/kirara_chibi.png" alt="金鯱きらら">
+                <img src="./パッケージ/ちびキャラ/kirara_chibi.webp" alt="金鯱きらら">
                 <span>きらら</span>
             </a>
             <a class="hero-character-link" href="https://line.me/R/ti/p/@198jdufv" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/aoi_chibi.png" alt="徳川あおい">
+                <img src="./パッケージ/ちびキャラ/aoi_chibi.webp" alt="徳川あおい">
                 <span>あおい</span>
             </a>
             <a class="hero-character-link" href="https://line.me/R/ti/p/@967bjcvh" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/sakura_chibi.png" alt="東山さくら">
+                <img src="./パッケージ/ちびキャラ/sakura_chibi.webp" alt="東山さくら">
                 <span>さくら</span>
             </a>
             <a class="hero-character-link" href="https://line.me/R/ti/p/@369qpyqt" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'hero'})">
-                <img src="./パッケージ/ちびキャラ/mikoto_chibi.png" alt="神宮寺みこと">
+                <img src="./パッケージ/ちびキャラ/mikoto_chibi.webp" alt="神宮寺みこと">
                 <span>みこと</span>
             </a>
         </div>
@@ -539,7 +539,7 @@
     <!-- NEWS セクション -->
     <section id="news" class="news-section">
         <div class="news-logo-wrapper">
-            <img src="./パッケージ/NEWS.jpg" alt="KIRAMEKI NEWS" class="news-logo">
+            <img src="./パッケージ/NEWS.webp" alt="KIRAMEKI NEWS" class="news-logo">
         </div>
         <div class="news-container">
           <div class="news-slider" aria-label="煌きTIMES NEWS 横スクロール">
@@ -574,7 +574,7 @@
                 <h3 class="news-title">「煌きTIMES」いよいよデビュー決定！会見で意気込みを語る</h3>
                 <div class="news-content">
                     <div class="news-thumbnail">
-                        <img src="./パッケージ/記者会見.jpg" alt="デビュー会見 2026">
+                        <img src="./パッケージ/記者会見.webp" alt="デビュー会見 2026">
                     </div>
                     <div class="news-text">
                         <p>本日、煌 WORKSプロデュースの新アイドルユニット「煌きTIMES」のデビューが正式に発表されました！</p>
@@ -595,7 +595,7 @@
             <div class="media-box pv-media-box">
                 <h3><i class="fa-solid fa-film"></i> NEW PV</h3>
                 <div class="video-wrapper pv-video-wrapper">
-                    <video src="./パッケージ/kirameki_paradox_pv_52s_web.mp4" poster="./パッケージ/kirameki_paradox_pv_52s_poster.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./パッケージ/kirameki_paradox_pv_52s_web.mp4" poster="./パッケージ/kirameki_paradox_pv_52s_poster.webp" controls preload="metadata" playsinline></video>
                 </div>
                 <p class="pv-caption">デビュー曲「煌きパラドックス」の52秒PV。ステージの光と6人のきらめきを詰め込んだスペシャルムービーです。</p>
             </div>
@@ -638,7 +638,7 @@
     <!-- ABOUT US セクション -->
     <section id="about" class="about-section">
         <div class="about-image">
-            <img src="./パッケージ/debut_flyer.jpg" alt="煌 TIMES ABOUT US 画像">
+            <img src="./パッケージ/debut_flyer.webp" alt="煌 TIMES ABOUT US 画像">
         </div>
         <div class="about-content">
             <h2>ABOUT<br>煌 TIMES</h2>
@@ -651,7 +651,7 @@
 
     <!-- LINE案内バナー -->
     <section class="line-board-section">
-        <img src="./バナー.png" alt="まったく新しい推し活の形！LINEボットで推しキャラと繋がる！" style="width: 100%; max-width: 1000px; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: block; margin: 0 auto;">
+        <img src="./バナー.webp" alt="まったく新しい推し活の形！LINEボットで推しキャラと繋がる！" style="width: 100%; max-width: 1000px; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: block; margin: 0 auto;">
     </section>
 
     <!-- キャラクターセクション -->
@@ -661,7 +661,7 @@
             
             <div class="card card-marin">
                 <div class="card-img-wrapper" onclick="toggleCostume('marin')">
-                    <img src="./パッケージ/ダンスキャラ/乙姫マリン.png" alt="乙姫マリン" class="card-img" id="img-marin" />
+                    <img src="./パッケージ/ダンスキャラ/乙姫マリン.webp" alt="乙姫マリン" class="card-img" id="img-marin" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">乙姫 マリン</h3>
@@ -676,7 +676,7 @@
                 <div class="profile-desc">冷静で落ち着いており、物事を一歩引いた視点で考えるタイプ。そばにいるだけで安心感を与え、要所では的確な言葉でチームを支える存在。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@561mucxu" target="_blank" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/marin_chibi.png" alt="マリンちび">
+                        <img src="./パッケージ/ちびキャラ/marin_chibi.webp" alt="マリンちび">
                         <span>マリンに近況を聞く</span>
                     </a>
                 </div>
@@ -684,7 +684,7 @@
 
             <div class="card card-kanon">
                 <div class="card-img-wrapper" onclick="toggleCostume('kanon')">
-                    <img src="./パッケージ/ダンスキャラ/大須かのん（神音）.png" alt="大須かのん" class="card-img" id="img-kanon" />
+                    <img src="./パッケージ/ダンスキャラ/大須かのん（神音）.webp" alt="大須かのん" class="card-img" id="img-kanon" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">大須 かのん</h3>
@@ -699,7 +699,7 @@
                 <div class="profile-desc">清楚で綺麗系の外見だが、実はアニメやゲームに目がない典型的オタク。趣味に関しては情熱的で我を忘れる一面も。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@120ytjyl" target="_blank" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/kanon_chibi.png" alt="かのんちび">
+                        <img src="./パッケージ/ちびキャラ/kanon_chibi.webp" alt="かのんちび">
                         <span>かのんの推しを聞く</span>
                     </a>
                 </div>
@@ -707,7 +707,7 @@
 
             <div class="card card-kirara">
                 <div class="card-img-wrapper" onclick="toggleCostume('kirara')">
-                    <img src="./パッケージ/ダンスキャラ/金鯱きらら.png" alt="金鯱きらら" class="card-img" id="img-kirara" />
+                    <img src="./パッケージ/ダンスキャラ/金鯱きらら.webp" alt="金鯱きらら" class="card-img" id="img-kirara" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">金鯱 きらら</h3>
@@ -722,7 +722,7 @@
                 <div class="profile-desc">明るく元気で人懐っこく、初対面でもすぐに距離を縮められる行動派。周囲を巻き込みながら雰囲気を明るくするムードメーカー。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@545fnsmf" target="_blank" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/kirara_chibi.png" alt="きららちび">
+                        <img src="./パッケージ/ちびキャラ/kirara_chibi.webp" alt="きららちび">
                         <span>きららから元気をもらう</span>
                     </a>
                 </div>
@@ -730,7 +730,7 @@
 
             <div class="card card-aoi">
                 <div class="card-img-wrapper" onclick="toggleCostume('aoi')">
-                    <img src="./パッケージ/ダンスキャラ/徳川あおい（葵）.png" alt="徳川あおい" class="card-img" id="img-aoi" />
+                    <img src="./パッケージ/ダンスキャラ/徳川あおい（葵）.webp" alt="徳川あおい" class="card-img" id="img-aoi" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">徳川 あおい</h3>
@@ -745,7 +745,7 @@
                 <div class="profile-desc">気品と上品さを兼ね備えたお嬢様タイプ。場の空気を読むのが上手で、チームから頼られる存在。意外にアクティブで行動的。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@198jdufv" target="_blank" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/aoi_chibi.png" alt="あおいちび">
+                        <img src="./パッケージ/ちびキャラ/aoi_chibi.webp" alt="あおいちび">
                         <span>あおいに相談してみる</span>
                     </a>
                 </div>
@@ -753,7 +753,7 @@
 
             <div class="card card-sakura">
                 <div class="card-img-wrapper" onclick="toggleCostume('sakura')">
-                    <img src="./パッケージ/ダンスキャラ/東山さくら（桜）.png" alt="東山さくら" class="card-img" id="img-sakura" />
+                    <img src="./パッケージ/ダンスキャラ/東山さくら（桜）.webp" alt="東山さくら" class="card-img" id="img-sakura" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">東山 さくら</h3>
@@ -768,7 +768,7 @@
                 <div class="profile-desc">明るく好奇心旺盛で元気いっぱいの末っ子タイプ。チーム最年少で甘えん坊な一面も。動物好きで心優しく、誰にでも親しみやすいムードメーカー。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@967bjcvh" target="_blank" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/sakura_chibi.png" alt="さくらちび">
+                        <img src="./パッケージ/ちびキャラ/sakura_chibi.webp" alt="さくらちび">
                         <span>さくらと今日の話をする</span>
                     </a>
                 </div>
@@ -776,7 +776,7 @@
 
             <div class="card card-mikoto">
                 <div class="card-img-wrapper" onclick="toggleCostume('mikoto')">
-                    <img src="./パッケージ/ダンスキャラ/神宮寺みこと（美琴）.png" alt="神宮寺みこと" class="card-img" id="img-mikoto" />
+                    <img src="./パッケージ/ダンスキャラ/神宮寺みこと（美琴）.webp" alt="神宮寺みこと" class="card-img" id="img-mikoto" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">神宮寺 みこと</h3>
@@ -791,7 +791,7 @@
                 <div class="profile-desc">クールビューティーで落ち着いた雰囲気。周囲を自然に安心させる"癒し＆まとめ役"で、チームの冷静担当。芯の強さも持ち合わせる。</div>
                 <div class="line-bot-btn">
                     <a href="https://line.me/R/ti/p/@369qpyqt" target="_blank" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'profile_card'})">
-                        <img src="./パッケージ/ちびキャラ/mikoto_chibi.png" alt="みことちび">
+                        <img src="./パッケージ/ちびキャラ/mikoto_chibi.webp" alt="みことちび">
                         <span>みことにご利益を聞く</span>
                     </a>
                 </div>
@@ -801,7 +801,7 @@
     </section>
 
     <footer>
-        <img src="./パッケージ/タイトル透明.png" alt="煌 TIMES ロゴ" class="footer-logo">
+        <img src="./パッケージ/タイトル透明.webp" alt="煌 TIMES ロゴ" class="footer-logo">
         <div class="footer-social-title">OFFICIAL SNS</div>
         <div class="footer-social-links" aria-label="煌きTIMES 公式SNSリンク">
             <a class="footer-social-link instagram" href="https://www.instagram.com/kirameki_times/" target="_blank" rel="noopener" onclick="gtag('event','sns_link_click',{platform:'instagram',placement:'footer'})">
@@ -824,12 +824,12 @@
     <script>
         // 衣装データの定義と、画像内の余白違いを相殺するための倍率(scale)設定
         const costumeData = {
-            marin: { idol: './パッケージ/ダンスキャラ/乙姫マリン.png', casual: './パッケージ/カジュアルイメージ/marin_casual.png', current: 'idol', scale: 1.0 },
-            kanon: { idol: './パッケージ/ダンスキャラ/大須かのん（神音）.png', casual: './パッケージ/カジュアルイメージ/kanon_casual.png', current: 'idol', scale: 1.0 },
-            kirara: { idol: './パッケージ/ダンスキャラ/金鯱きらら.png', casual: './パッケージ/カジュアルイメージ/kirara_casual.png', current: 'idol', scale: 1.0 },
-            aoi: { idol: './パッケージ/ダンスキャラ/徳川あおい（葵）.png', casual: './パッケージ/カジュアルイメージ/aoi_casual.png', current: 'idol', scale: 1.0 },
-            sakura: { idol: './パッケージ/ダンスキャラ/東山さくら（桜）.png', casual: './パッケージ/カジュアルイメージ/sakura_casual.png', current: 'idol', scale: 1.0 },
-            mikoto: { idol: './パッケージ/ダンスキャラ/神宮寺みこと（美琴）.png', casual: './パッケージ/カジュアルイメージ/mikoto_casual.png', current: 'idol', scale: 1.0 }
+            marin: { idol: './パッケージ/ダンスキャラ/乙姫マリン.webp', casual: './パッケージ/カジュアルイメージ/marin_casual.webp', current: 'idol', scale: 1.0 },
+            kanon: { idol: './パッケージ/ダンスキャラ/大須かのん（神音）.webp', casual: './パッケージ/カジュアルイメージ/kanon_casual.webp', current: 'idol', scale: 1.0 },
+            kirara: { idol: './パッケージ/ダンスキャラ/金鯱きらら.webp', casual: './パッケージ/カジュアルイメージ/kirara_casual.webp', current: 'idol', scale: 1.0 },
+            aoi: { idol: './パッケージ/ダンスキャラ/徳川あおい（葵）.webp', casual: './パッケージ/カジュアルイメージ/aoi_casual.webp', current: 'idol', scale: 1.0 },
+            sakura: { idol: './パッケージ/ダンスキャラ/東山さくら（桜）.webp', casual: './パッケージ/カジュアルイメージ/sakura_casual.webp', current: 'idol', scale: 1.0 },
+            mikoto: { idol: './パッケージ/ダンスキャラ/神宮寺みこと（美琴）.webp', casual: './パッケージ/カジュアルイメージ/mikoto_casual.webp', current: 'idol', scale: 1.0 }
         };
 
         // 衣装フリップ処理 (クリックでアイドル⇔私服トグル。高さ維持とスケール補正)
@@ -901,7 +901,7 @@
           "name": "煌きTIMES",
           "alternateName": ["煌TIMES", "きらめきタイムス", "Kirameki TIMES"],
           "url": "https://kirameki.sunlight-net.co.jp/",
-          "image": "https://kirameki.sunlight-net.co.jp/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/%E7%85%8C%E3%81%8D%E3%83%90%E3%83%8A%E3%83%BC.png",
+          "image": "https://kirameki.sunlight-net.co.jp/og-image.jpg",
           "description": "名古屋を舞台に活躍する6人組アイドルユニット。LINEボットで実際にキャラクターと会話できる新感覚の推し活体験を提供。",
           "genre": ["J-Pop", "Idol"],
           "foundingLocation": {
