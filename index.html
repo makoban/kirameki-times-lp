@@ -154,6 +154,9 @@
         .media-box h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; font-weight: 900; border-bottom: 3px dashed var(--secondary-color); padding-bottom: 1rem; }
         .video-wrapper { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); background: #000; }
         .video-wrapper video { width: 100%; display: block; }
+        .video-load-btn { width: 100%; min-height: 54px; border: 0; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: #fff; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .video-load-btn:hover { filter: brightness(1.06); }
+        .video-wrapper.is-ready .video-load-btn { display: none; }
         .pv-media-box { align-items: center; }
         .pv-media-box h3 { width: 100%; }
         .pv-video-wrapper { width: min(100%, 430px); }
@@ -505,27 +508,27 @@
         <div class="hero-title">6人の推しと、LINEで話せる。</div>
         <div class="hero-subtitle">気になる子を選んで、キャラクター別LINEボットの会話体験へ。</div>
         <div class="hero-character-links" aria-label="キャラクター別LINEリンク">
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@561mucxu" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@561mucxu" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/marin_chibi.webp" alt="乙姫マリン">
                 <span>マリン</span>
             </a>
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@120ytjyl" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@120ytjyl" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/kanon_chibi.webp" alt="大須かのん">
                 <span>かのん</span>
             </a>
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@545fnsmf" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@545fnsmf" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/kirara_chibi.webp" alt="金鯱きらら">
                 <span>きらら</span>
             </a>
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@198jdufv" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@198jdufv" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/aoi_chibi.webp" alt="徳川あおい">
                 <span>あおい</span>
             </a>
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@967bjcvh" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@967bjcvh" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/sakura_chibi.webp" alt="東山さくら">
                 <span>さくら</span>
             </a>
-            <a class="hero-character-link" href="https://line.me/R/ti/p/@369qpyqt" target="_blank" rel="noopener" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'hero'})">
+            <a class="hero-character-link" href="./line-friend.html?account=@369qpyqt" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'hero'})">
                 <img src="./パッケージ/ちびキャラ/mikoto_chibi.webp" alt="神宮寺みこと">
                 <span>みこと</span>
             </a>
@@ -595,7 +598,8 @@
             <div class="media-box pv-media-box">
                 <h3><i class="fa-solid fa-film"></i> NEW PV</h3>
                 <div class="video-wrapper pv-video-wrapper">
-                    <video src="./パッケージ/kirameki_paradox_pv_52s_web.mp4" poster="./パッケージ/kirameki_paradox_pv_52s_poster.webp" controls preload="metadata" playsinline></video>
+                    <video data-src="./パッケージ/kirameki_paradox_pv_52s_web.mp4" poster="./パッケージ/kirameki_paradox_pv_52s_poster.webp" controls preload="none" playsinline></video>
+                    <button class="video-load-btn" type="button"><i class="fa-solid fa-play"></i> PVを再生</button>
                 </div>
                 <p class="pv-caption">デビュー曲「煌きパラドックス」の52秒PV。ステージの光と6人のきらめきを詰め込んだスペシャルムービーです。</p>
             </div>
@@ -603,14 +607,15 @@
             <div class="media-box pv-media-box">
                 <h3><i class="fa-solid fa-video"></i> PREVIOUS PV</h3>
                 <div class="video-wrapper pv-video-wrapper">
-                    <video src="./パッケージ/PVステージタイトル替え更新_web.mp4" controls preload="metadata" playsinline></video>
+                    <video data-src="./パッケージ/PVステージタイトル替え更新_web.mp4" poster="./og-image.jpg" controls preload="none" playsinline></video>
+                    <button class="video-load-btn" type="button"><i class="fa-solid fa-play"></i> PVを再生</button>
                 </div>
                 <p class="pv-caption">煌きTIMESの紹介用PVです。デビュー曲「煌きパラドックス」</p>
             </div>
 
             <div class="media-box song-media-box">
                 <h3><i class="fa-solid fa-music"></i> 煌きパラドックス</h3>
-                <audio class="audio-player" src="./パッケージ/煌きパラドックス (本番).mp3" controls controlsList="nodownload"></audio>
+                <audio class="audio-player" src="./パッケージ/煌きパラドックス (本番).mp3" controls preload="none" controlsList="nodownload"></audio>
                 <p class="song-note">フル音源はこちら。PVとあわせて、歌詞の世界観も楽しめます。</p>
                 
                 <div class="lyrics-box">
@@ -675,7 +680,7 @@
                 </ul>
                 <div class="profile-desc">冷静で落ち着いており、物事を一歩引いた視点で考えるタイプ。そばにいるだけで安心感を与え、要所では的確な言葉でチームを支える存在。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@561mucxu" target="_blank" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@561mucxu" onclick="gtag('event','line_friend_click',{character:'marin',character_name:'乙姫マリン',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/marin_chibi.webp" alt="マリンちび">
                         <span>マリンに近況を聞く</span>
                     </a>
@@ -698,7 +703,7 @@
                 </ul>
                 <div class="profile-desc">清楚で綺麗系の外見だが、実はアニメやゲームに目がない典型的オタク。趣味に関しては情熱的で我を忘れる一面も。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@120ytjyl" target="_blank" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@120ytjyl" onclick="gtag('event','line_friend_click',{character:'kanon',character_name:'大須かのん',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/kanon_chibi.webp" alt="かのんちび">
                         <span>かのんの推しを聞く</span>
                     </a>
@@ -721,7 +726,7 @@
                 </ul>
                 <div class="profile-desc">明るく元気で人懐っこく、初対面でもすぐに距離を縮められる行動派。周囲を巻き込みながら雰囲気を明るくするムードメーカー。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@545fnsmf" target="_blank" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@545fnsmf" onclick="gtag('event','line_friend_click',{character:'kirara',character_name:'金鯱きらら',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/kirara_chibi.webp" alt="きららちび">
                         <span>きららから元気をもらう</span>
                     </a>
@@ -744,7 +749,7 @@
                 </ul>
                 <div class="profile-desc">気品と上品さを兼ね備えたお嬢様タイプ。場の空気を読むのが上手で、チームから頼られる存在。意外にアクティブで行動的。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@198jdufv" target="_blank" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@198jdufv" onclick="gtag('event','line_friend_click',{character:'aoi',character_name:'徳川あおい',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/aoi_chibi.webp" alt="あおいちび">
                         <span>あおいに相談してみる</span>
                     </a>
@@ -767,7 +772,7 @@
                 </ul>
                 <div class="profile-desc">明るく好奇心旺盛で元気いっぱいの末っ子タイプ。チーム最年少で甘えん坊な一面も。動物好きで心優しく、誰にでも親しみやすいムードメーカー。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@967bjcvh" target="_blank" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@967bjcvh" onclick="gtag('event','line_friend_click',{character:'sakura',character_name:'東山さくら',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/sakura_chibi.webp" alt="さくらちび">
                         <span>さくらと今日の話をする</span>
                     </a>
@@ -790,7 +795,7 @@
                 </ul>
                 <div class="profile-desc">クールビューティーで落ち着いた雰囲気。周囲を自然に安心させる"癒し＆まとめ役"で、チームの冷静担当。芯の強さも持ち合わせる。</div>
                 <div class="line-bot-btn">
-                    <a href="https://line.me/R/ti/p/@369qpyqt" target="_blank" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'profile_card'})">
+                    <a href="./line-friend.html?account=@369qpyqt" onclick="gtag('event','line_friend_click',{character:'mikoto',character_name:'神宮寺みこと',placement:'profile_card'})">
                         <img src="./パッケージ/ちびキャラ/mikoto_chibi.webp" alt="みことちび">
                         <span>みことにご利益を聞く</span>
                     </a>
@@ -888,6 +893,28 @@
             }, { threshold: 0.1 });
 
             animateElements.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.video-wrapper video[data-src]').forEach((video) => {
+                const wrapper = video.closest('.video-wrapper');
+                const button = wrapper.querySelector('.video-load-btn');
+                const prepareVideo = async () => {
+                    if (!video.src) {
+                        video.src = video.dataset.src;
+                        video.load();
+                        wrapper.classList.add('is-ready');
+                    }
+                    try {
+                        await video.play();
+                    } catch (error) {
+                        video.controls = true;
+                    }
+                };
+
+                button.addEventListener('click', prepareVideo);
+                video.addEventListener('click', () => {
+                    if (!video.src) prepareVideo();
+                }, { once: true });
+            });
         });
     </script>
 

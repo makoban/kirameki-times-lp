@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEで友だち追加 | 煌きTIMES</title>
+    <meta name="robots" content="noindex,follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --line: #00b900;
+            --pink: #ff3385;
+            --blue: #33ccff;
+            --dark: #160015;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, rgba(20,0,18,0.84), rgba(0,18,34,0.82)), url('./stage_background.webp') center / cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .panel {
+            width: min(100%, 560px);
+            background: rgba(255,255,255,0.94);
+            color: #222;
+            border-radius: 20px;
+            padding: 1.6rem;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.42);
+        }
+
+        .logo {
+            display: block;
+            width: min(270px, 78%);
+            margin: 0 auto 1rem;
+            filter: drop-shadow(0 8px 18px rgba(255,51,133,0.34));
+        }
+
+        h1 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: clamp(1.45rem, 6vw, 2.1rem);
+            line-height: 1.35;
+            text-align: center;
+            color: var(--pink);
+            margin-bottom: 0.7rem;
+        }
+
+        .lead {
+            text-align: center;
+            font-weight: 800;
+            line-height: 1.75;
+            margin-bottom: 1.2rem;
+        }
+
+        .notice {
+            display: none;
+            background: #fff5d6;
+            border: 2px solid #ffd46b;
+            border-radius: 14px;
+            padding: 0.9rem;
+            color: #4a3500;
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .notice.is-visible { display: block; }
+
+        .actions { display: grid; gap: 0.75rem; }
+
+        .button {
+            min-height: 56px;
+            border: 0;
+            border-radius: 999px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.8rem 1rem;
+        }
+
+        .button-primary { background: var(--line); color: #fff; box-shadow: 0 12px 24px rgba(0,185,0,0.28); }
+        .button-secondary { background: #f1f5f9; color: #222; }
+        .button-link { background: transparent; color: #555; min-height: 44px; }
+
+        .help {
+            margin-top: 1rem;
+            font-size: 0.86rem;
+            line-height: 1.7;
+            color: #555;
+            text-align: center;
+        }
+
+        .account {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-weight: 900;
+            color: var(--pink);
+        }
+    </style>
+</head>
+<body>
+    <main class="panel">
+        <img class="logo" src="./パッケージ/タイトル透明.webp" alt="煌きTIMES">
+        <h1><span id="characterName">煌きTIMES</span>をLINEで友だち追加</h1>
+        <p class="lead">
+            下のボタンからLINEアプリを開いてください。<br>
+            <span class="account" id="accountLabel"></span>
+        </p>
+        <div class="notice" id="inAppNotice">
+            TikTokやInstagramなどのアプリ内ブラウザでは、LINEへの直接移動が制限される場合があります。開けない時は、右上メニューからSafariまたはChromeで開いてからもう一度押してください。
+        </div>
+        <div class="actions">
+            <button class="button button-primary" id="openLineBtn" type="button">LINEアプリで開く</button>
+            <button class="button button-secondary" id="copyBtn" type="button">LINEリンクをコピー</button>
+            <a class="button button-link" href="./index.html">LPに戻る</a>
+        </div>
+        <p class="help" id="copyStatus">コピーしたリンクをSafariまたはChromeのアドレス欄に貼り付けても友だち追加できます。</p>
+    </main>
+
+    <script>
+        const accounts = {
+            '@561mucxu': '乙姫マリン',
+            '@120ytjyl': '大須かのん',
+            '@545fnsmf': '金鯱きらら',
+            '@198jdufv': '徳川あおい',
+            '@967bjcvh': '東山さくら',
+            '@369qpyqt': '神宮寺みこと'
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const account = params.get('account') || '@561mucxu';
+        const characterName = accounts[account] || '煌きTIMES';
+        const webLink = `https://line.me/R/ti/p/${account}`;
+        const deepLink = `line://ti/p/${account}`;
+        const ua = navigator.userAgent || '';
+        const isLineApp = /Line\//i.test(ua);
+        const isRestrictedInApp = /(TikTok|musical_ly|Bytedance|Instagram|FBAN|FBAV|Twitter|X-Twitter)/i.test(ua);
+
+        document.getElementById('characterName').textContent = characterName;
+        document.getElementById('accountLabel').textContent = account;
+
+        if (isRestrictedInApp) {
+            document.getElementById('inAppNotice').classList.add('is-visible');
+        }
+
+        document.getElementById('openLineBtn').addEventListener('click', () => {
+            const started = Date.now();
+            window.location.href = deepLink;
+
+            if (!isLineApp && !isRestrictedInApp) {
+                setTimeout(() => {
+                    if (Date.now() - started < 1700 && !document.hidden) {
+                        window.location.href = webLink;
+                    }
+                }, 1200);
+            }
+        });
+
+        document.getElementById('copyBtn').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(webLink);
+                document.getElementById('copyStatus').textContent = 'LINEリンクをコピーしました。SafariまたはChromeで開いてください。';
+            } catch (error) {
+                document.getElementById('copyStatus').textContent = webLink;
+            }
+        });
+    </script>
+</body>
+</html>
