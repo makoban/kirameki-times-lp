@@ -122,7 +122,7 @@
             z-index: 2; position: relative;
         }
         .news-container { width: 100%; }
-        .news-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 86%); gap: 1.4rem; align-items: start; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0.4rem 0.2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(255,255,255,0.22); }
+        .news-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 86%); gap: 1.4rem; align-items: stretch; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0.4rem 0.2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(255,255,255,0.22); }
         .news-slider::-webkit-scrollbar { height: 8px; }
         .news-slider::-webkit-scrollbar-track { background: rgba(255,255,255,0.22); border-radius: 999px; }
         .news-slider::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 999px; }
@@ -138,7 +138,7 @@
         .news-thumbnail img { width: 100%; height: auto; object-fit: contain; display: block; transition: filter 0.5s ease; }
         .news-item:hover .news-thumbnail img { filter: brightness(1.04); }
         .news-text { font-size: 0.96rem; line-height: 1.8; color: #444; font-weight: 600; }
-        .pv-news-visual { position: relative; aspect-ratio: 16 / 10; background: url('./パッケージ/kirameki_paradox_pv_production_news.webp') center / cover no-repeat; overflow: hidden; }
+        .pv-news-visual { position: relative; aspect-ratio: 1 / 1; background: url('./パッケージ/kirameki_paradox_pv_production_news_square.webp') center / cover no-repeat; overflow: hidden; }
         .pv-news-visual::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(7,0,30,0.02), rgba(7,0,30,0.72)); }
         .pv-news-badge { position: absolute; top: 18px; left: 18px; background: #fff; color: var(--primary-color); font-weight: 900; padding: 0.35rem 0.8rem; border-radius: 999px; box-shadow: 0 8px 18px rgba(0,0,0,0.25); }
         .pv-news-copy { position: absolute; left: 18px; right: 18px; bottom: 18px; color: #fff; text-shadow: 0 4px 16px rgba(0,0,0,0.7); }
@@ -572,8 +572,10 @@
                     </div>
                     <div class="news-text">
                         <p>煌きTIMESのデビュー曲「煌きパラドックス」のPVが完成しました！</p>
-                        <p>プロデューサーと細部までこだわって制作した、ステージの光・キャラクターの表情・楽曲の疾走感が詰まった映像です。</p>
-                        <p>MUSIC & MOVIEセクションで公開中です。ぜひ音と映像を一緒に楽しんでください。</p>
+                        <p>今回の映像では、6人それぞれのカラーがステージ上でしっかり伝わるよう、ライトの入り方、カメラの寄り引き、ダンスの見せ場を細かく調整しています。</p>
+                        <p>制作現場では、モニターで表情やシルエットを何度も確認しながら、楽曲の疾走感とアイドルらしいきらめきが同時に残るカットを選びました。</p>
+                        <p>サビに向かって光が一気に広がる演出や、メンバーが並んだ瞬間の華やかさなど、短い映像の中にも煌きTIMESらしさを詰め込んでいます。</p>
+                        <p>MUSIC & MOVIEセクションで公開中です。推しの表情、衣装の色、ステージの光まで、ぜひ音と映像を一緒に楽しんでください。</p>
                     </div>
                 </div>
             </article>
