@@ -122,7 +122,7 @@
             z-index: 2; position: relative;
         }
         .news-container { width: 100%; }
-        .news-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 86%); gap: 1.4rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0.4rem 0.2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(255,255,255,0.22); }
+        .news-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 86%); gap: 1.4rem; align-items: start; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0.4rem 0.2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(255,255,255,0.22); }
         .news-slider::-webkit-scrollbar { height: 8px; }
         .news-slider::-webkit-scrollbar-track { background: rgba(255,255,255,0.22); border-radius: 999px; }
         .news-slider::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 999px; }
@@ -134,9 +134,9 @@
         .news-category { color: var(--accent-color); font-weight: 800; font-size: 0.9rem; border: 2px solid var(--accent-color); padding: 0.2rem 0.8rem; border-radius: 20px; }
         .news-title { font-size: 1.45rem; color: var(--text-dark); font-weight: 900; line-height: 1.35; }
         .news-content { display: flex; flex-direction: column; gap: 1.1rem; align-items: stretch; }
-        .news-thumbnail { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .news-thumbnail img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; transition: transform 0.5s ease; }
-        .news-item:hover .news-thumbnail img { transform: scale(1.05); }
+        .news-thumbnail { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.2); background: rgba(255,255,255,0.82); }
+        .news-thumbnail img { width: 100%; height: auto; object-fit: contain; display: block; transition: filter 0.5s ease; }
+        .news-item:hover .news-thumbnail img { filter: brightness(1.04); }
         .news-text { font-size: 0.96rem; line-height: 1.8; color: #444; font-weight: 600; }
         .pv-news-visual { position: relative; aspect-ratio: 16 / 10; background: url('./パッケージ/kirameki_paradox_pv_production_news.webp') center / cover no-repeat; overflow: hidden; }
         .pv-news-visual::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(7,0,30,0.02), rgba(7,0,30,0.72)); }
@@ -149,17 +149,17 @@
            MUSIC & MOVIE セクション
         ------------------------------------- */
         .media-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
-        .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: start; }
+        .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: stretch; }
         .media-box { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-radius: 25px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(255,255,255,0.7); display: flex; flex-direction: column; }
         .media-box h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; font-weight: 900; border-bottom: 3px dashed var(--secondary-color); padding-bottom: 1rem; }
         .video-wrapper { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); background: #000; }
-        .video-wrapper video { width: 100%; display: block; }
+        .video-wrapper video { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain; display: block; background: #000; }
         .video-load-btn { width: 100%; min-height: 54px; border: 0; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: #fff; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
         .video-load-btn:hover { filter: brightness(1.06); }
         .video-wrapper.is-ready .video-load-btn { display: none; }
         .pv-media-box { align-items: center; }
         .pv-media-box h3 { width: 100%; }
-        .pv-video-wrapper { width: min(100%, 430px); }
+        .pv-video-wrapper { width: min(100%, 520px); }
         .pv-caption { margin-top: 1rem; color: #444; font-weight: 800; line-height: 1.7; text-align: center; }
         .song-media-box { grid-column: 1 / -1; width: min(100%, 680px); margin: 0 auto; padding: 1.35rem; }
         .song-media-box h3 { font-size: 1.35rem; margin-bottom: 1rem; padding-bottom: 0.7rem; }
@@ -451,7 +451,7 @@
             .media-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
             .media-box { padding: 1rem 0.5rem; }
             .media-box h3 { font-size: 1.1rem; }
-            .pv-video-wrapper { width: min(100%, 330px); }
+            .pv-video-wrapper { width: 100%; }
             .pv-caption { font-size: 0.85rem; padding: 0 0.5rem; }
             .song-media-box { padding: 0.9rem 0.6rem; }
             .song-note { font-size: 0.78rem; }
@@ -552,7 +552,7 @@
     <!-- NEWS セクション -->
     <section id="news" class="news-section">
         <div class="news-logo-wrapper">
-            <img src="./パッケージ/NEWS.webp" alt="KIRAMEKI NEWS" class="news-logo" width="1000" height="563" loading="lazy" decoding="async">
+            <img src="./パッケージ/NEWS.webp" alt="KIRAMEKI NEWS" class="news-logo" width="1200" height="224" loading="lazy" decoding="async">
         </div>
         <div class="news-container">
           <div class="news-slider" aria-label="煌きTIMES NEWS 横スクロール">
@@ -587,7 +587,7 @@
                 <h3 class="news-title">「煌きTIMES」いよいよデビュー決定！会見で意気込みを語る</h3>
                 <div class="news-content">
                     <div class="news-thumbnail">
-                        <img src="./パッケージ/記者会見.webp" alt="デビュー会見 2026" width="1200" height="750" loading="lazy" decoding="async">
+                        <img src="./パッケージ/記者会見.webp" alt="デビュー会見 2026" width="800" height="800" loading="lazy" decoding="async">
                     </div>
                     <div class="news-text">
                         <p>本日、煌 WORKSプロデュースの新アイドルユニット「煌きTIMES」のデビューが正式に発表されました！</p>
@@ -666,7 +666,7 @@
 
     <!-- LINE案内バナー -->
     <section class="line-board-section">
-        <img src="./バナー.webp" alt="まったく新しい推し活の形！LINEボットで推しキャラと繋がる！" width="1000" height="563" loading="lazy" decoding="async" style="width: 100%; max-width: 1000px; height: auto; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: block; margin: 0 auto;">
+        <img src="./バナー.webp" alt="まったく新しい推し活の形！LINEボットで推しキャラと繋がる！" width="1200" height="593" loading="lazy" decoding="async" style="width: 100%; max-width: 1000px; height: auto; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: block; margin: 0 auto;">
     </section>
 
     <!-- キャラクターセクション -->
@@ -676,7 +676,7 @@
             
             <div class="card card-marin">
                 <div class="card-img-wrapper" onclick="toggleCostume('marin')">
-                    <img src="./パッケージ/ダンスキャラ/乙姫マリン.webp" alt="乙姫マリン" class="card-img" id="img-marin" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/乙姫マリン.webp" alt="乙姫マリン" class="card-img" id="img-marin" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">乙姫 マリン</h3>
@@ -699,7 +699,7 @@
 
             <div class="card card-kanon">
                 <div class="card-img-wrapper" onclick="toggleCostume('kanon')">
-                    <img src="./パッケージ/ダンスキャラ/大須かのん（神音）.webp" alt="大須かのん" class="card-img" id="img-kanon" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/大須かのん（神音）.webp" alt="大須かのん" class="card-img" id="img-kanon" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">大須 かのん</h3>
@@ -722,7 +722,7 @@
 
             <div class="card card-kirara">
                 <div class="card-img-wrapper" onclick="toggleCostume('kirara')">
-                    <img src="./パッケージ/ダンスキャラ/金鯱きらら.webp" alt="金鯱きらら" class="card-img" id="img-kirara" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/金鯱きらら.webp" alt="金鯱きらら" class="card-img" id="img-kirara" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">金鯱 きらら</h3>
@@ -745,7 +745,7 @@
 
             <div class="card card-aoi">
                 <div class="card-img-wrapper" onclick="toggleCostume('aoi')">
-                    <img src="./パッケージ/ダンスキャラ/徳川あおい（葵）.webp" alt="徳川あおい" class="card-img" id="img-aoi" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/徳川あおい（葵）.webp" alt="徳川あおい" class="card-img" id="img-aoi" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">徳川 あおい</h3>
@@ -768,7 +768,7 @@
 
             <div class="card card-sakura">
                 <div class="card-img-wrapper" onclick="toggleCostume('sakura')">
-                    <img src="./パッケージ/ダンスキャラ/東山さくら（桜）.webp" alt="東山さくら" class="card-img" id="img-sakura" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/東山さくら（桜）.webp" alt="東山さくら" class="card-img" id="img-sakura" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">東山 さくら</h3>
@@ -791,7 +791,7 @@
 
             <div class="card card-mikoto">
                 <div class="card-img-wrapper" onclick="toggleCostume('mikoto')">
-                    <img src="./パッケージ/ダンスキャラ/神宮寺みこと（美琴）.webp" alt="神宮寺みこと" class="card-img" id="img-mikoto" width="420" height="520" loading="lazy" decoding="async" />
+                    <img src="./パッケージ/ダンスキャラ/神宮寺みこと（美琴）.webp" alt="神宮寺みこと" class="card-img" id="img-mikoto" width="640" height="1125" loading="lazy" decoding="async" />
                 </div>
                 <div class="card-header">
                     <h3 class="card-name">神宮寺 みこと</h3>
