@@ -386,6 +386,9 @@
         .footer-social-link.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
         .footer-social-link.tiktok { background: linear-gradient(135deg, #111, #25f4ee 52%, #fe2c55); }
         .footer-social-link.x-twitter { background: linear-gradient(135deg, #111, #333); }
+        .footer-page-links { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin: 0 auto 1.6rem; }
+        .footer-page-link { color: #fff8cc; text-decoration: none; font-weight: 900; border-bottom: 1px solid rgba(255,248,204,0.5); }
+        .footer-page-link:hover { color: #fff; border-bottom-color: #fff; }
 
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
         @keyframes glow { from { filter: drop-shadow(0 5px 25px rgba(255,51,133,0.5)); } to { filter: drop-shadow(0 15px 45px rgba(255,51,133,0.9)); } }
@@ -501,6 +504,8 @@
             .footer-social-title { font-size: 0.95rem; }
             .footer-social-links { flex-direction: column; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
             .footer-social-link { width: min(280px, 92vw); padding: 0.7rem 1rem; font-size: 0.9rem; }
+            .footer-page-links { gap: 0.5rem; margin-bottom: 1.2rem; }
+            .footer-page-link { font-size: 0.86rem; }
         }
     </style>
 </head>
@@ -833,6 +838,11 @@
                 <i class="fa-brands fa-x-twitter"></i>
                 <span>X</span>
             </a>
+        </div>
+        <div class="footer-page-links" aria-label="関連ページ">
+            <a class="footer-page-link" href="./sunpro.html">サンライトプロデュース</a>
+            <a class="footer-page-link" href="https://sunlight-net.co.jp/" target="_blank" rel="noopener">株式会社サンライト</a>
+            <a class="footer-page-link" href="https://www.makuake.com/project/kirameki_sunlight/" target="_blank" rel="noopener">煌BASE Makuake</a>
         </div>
         <p>&copy; 2026 煌 TIMES / サンライト All Rights Reserved.</p>
     </footer>
