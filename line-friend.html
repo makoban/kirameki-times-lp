@@ -129,7 +129,7 @@
         <div class="actions">
             <button class="button button-primary" id="openLineBtn" type="button">LINEアプリで開く</button>
             <button class="button button-secondary" id="copyBtn" type="button">LINEリンクをコピー</button>
-            <a class="button button-link" href="./index.html">LPに戻る</a>
+            <a class="button button-link" id="returnLink" href="./index.html">LPに戻る</a>
         </div>
         <p class="help" id="copyStatus">コピーしたリンクをSafariまたはChromeのアドレス欄に貼り付けても友だち追加できます。</p>
     </main>
@@ -147,6 +147,13 @@
         const params = new URLSearchParams(window.location.search);
         const account = params.get('account') || '@561mucxu';
         const characterName = accounts[account] || '煌きTIMES';
+        const returnRoutes = {
+            kirapro: {
+                href: 'https://kirapro.sunlight-net.co.jp/',
+                label: 'KIRAPRO LPに戻る'
+            }
+        };
+        const returnRoute = returnRoutes[params.get('return')];
         const webLink = `https://line.me/R/ti/p/${account}`;
         const deepLink = `line://ti/p/${account}`;
         const ua = navigator.userAgent || '';
@@ -155,6 +162,11 @@
 
         document.getElementById('characterName').textContent = characterName;
         document.getElementById('accountLabel').textContent = account;
+        if (returnRoute) {
+            const returnLink = document.getElementById('returnLink');
+            returnLink.href = returnRoute.href;
+            returnLink.textContent = returnRoute.label;
+        }
 
         if (isRestrictedInApp) {
             document.getElementById('inAppNotice').classList.add('is-visible');
